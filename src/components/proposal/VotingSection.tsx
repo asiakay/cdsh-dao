@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -15,7 +16,7 @@ interface VotingSectionProps {
 }
 
 export function VotingSection({ proposal, user, onVoteCasted }: VotingSectionProps) {
-  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
+  const [isWalletModalOpen, setIsWalletModalOpen] = useState(proposal.status === 'active');
   const { toast } = useToast();
 
   const handleConnectAndVote = () => {
