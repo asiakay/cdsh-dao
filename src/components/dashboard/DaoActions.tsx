@@ -1,17 +1,17 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { PlusCircle, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 export function DaoActions() {
   const { toast } = useToast();
+  const router = useRouter();
 
   const handleNewProposal = () => {
-    toast({
-      title: "Feature Not Implemented",
-      description: "Creating new proposals will be available in a future version.",
-    });
+    router.push("/proposals/new");
   };
 
   const handleDelegateVotes = () => {
